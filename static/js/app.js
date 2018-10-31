@@ -1,5 +1,6 @@
 function buildMetadata(sample) {
    console.log(sample);
+   d3.select("#sample-metadata").html("");
     d3.json(`/metadata/${sample}`).then((bellyBUtton) => {
       
       var resKeys = Object.keys(bellyBUtton);
@@ -8,7 +9,7 @@ function buildMetadata(sample) {
         var $newDataLine = document.createElement('p');
         $newDataLine.innerHTML = resKeys[i] + ": " + bellyBUtton[resKeys[i]];
         sampleMetadata.appendChild($newDataLine)
-
+        
       }; });
 
   
